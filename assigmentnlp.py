@@ -35,7 +35,7 @@ def trigram(corpus, str):
 
 
 while True:
-    x = input()
+    x = input('\t')
     x = " ".join(x.split())
 
     if len(x) == 0:
