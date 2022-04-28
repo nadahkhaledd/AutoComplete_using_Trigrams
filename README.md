@@ -1,6 +1,6 @@
 # AutoComplete_using_Trigrams
 
-### Using the n-gram language meodeling algorithm to apply the auto complete task
+### Using the n-gram language modelling algorithm to apply the auto complete task
 
 #### Technologies used
 > - Python
