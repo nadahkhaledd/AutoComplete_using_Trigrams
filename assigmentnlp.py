@@ -7,13 +7,13 @@ nltk.download('brown')
 
 learned_sents = brown.sents(categories='learned')
 
-text_file = open("data.txt", "w")
-
-for sents in learned_sents:
-    text_file.write(" ".join(sents))
-    text_file.write("\n")
-
-text_file.close()
+# text_file = open("data.txt", "w")
+#
+# for sents in learned_sents:
+#     text_file.write(" ".join(sents))
+#     text_file.write("\n")
+#
+# text_file.close()
 
 
 def trigram(corpus, str):
