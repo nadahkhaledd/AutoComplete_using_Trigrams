@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5 import QtCore, QtGui, Qt
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QStandardItemModel
 from PyQt5.QtWidgets import *
 
 from assigmentnlp import output
@@ -22,6 +22,8 @@ class App(QWidget):
 
         self.search_input = QLineEdit()
         self.search_input.setFixedSize(200, 25)
+
+
 
         self.button = QPushButton('search')
         self.button.setFixedSize(90, 25)
