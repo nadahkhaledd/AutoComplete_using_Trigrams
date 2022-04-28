@@ -1,5 +1,7 @@
 import sys
 
+from PyQt5 import QtCore
+from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import *
 
 from assigmentnlp import output
@@ -10,27 +12,31 @@ class App(QWidget):
         super().__init__()
         self.setWindowTitle('Auto complete')
         self.init_ui()
-        self.setBaseSize(1800, 900)
-
-    def init_ui(self):
-        self.layout = QVBoxLayout()
-        self.title = QLabel('Auto Complete ')
-        self.search_input = QLineEdit()
-        self.result = QLabel('')
-        self.button = QPushButton('search')
-
-        self.button.clicked.connect(self.get_results)
-        self.button.setAutoDefault(True)
-        self.search_input.returnPressed.connect(self.button.click)
-
-        self.layout.addWidget(self.title)
-        self.layout.addWidget(self.search_input)
-        self.layout.addWidget(self.button)
-        self.layout.addWidget(self.result)
-
-        self.setLayout(self.layout)
 
         self.show()
+
+    def init_ui(self):
+        layout = QVBoxLayout()
+        title = QLabel('Auto Complete ')
+        # title.setFont(QFont('helvetica', 14))
+        # title.setAlignment(QtCore.Qt.AlignCenter)
+        search_input = QLineEdit()
+        result = QLabel('')
+
+        button = QPushButton('search')
+        # button.setStyleSheet("background-color : green")
+        # button.setFixedSize(90, 25)
+
+        button.clicked.connect(self.get_results)
+        button.setAutoDefault(True)
+        search_input.returnPressed.connect(button.click)
+
+        layout.addWidget(title)
+        layout.addWidget(search_input)
+        layout.addWidget(button)
+        layout.addWidget(result)
+
+        self.setLayout(layout)
 
     def get_results(self):
         input = self.search_input.text()
