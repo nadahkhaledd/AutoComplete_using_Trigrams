@@ -22,6 +22,7 @@ class App(QWidget):
 
         self.search_input = QLineEdit()
         self.search_input.setFixedSize(200, 25)
+        self.search_input.installEventFilter(self)
 
 
 
@@ -46,12 +47,18 @@ class App(QWidget):
 
         self.show()
 
+    def eventFilter(self, obj, event):
+        if event.type() == QtCore.QEvent.KeyRelease and obj is self.search_input and self.search_input.hasFocus():
+
+            self.get_results()
+        return super().eventFilter(obj, event)
+
 
     def get_results(self):
         input = self.search_input.text()
         out = output(input)
         self.result.setText(out)
-        return out
+
 
 
 if __name__ == '__main__':
