@@ -25,7 +25,8 @@ class App(QWidget):
 
         self.button = QPushButton('search')
         self.button.setFixedSize(90, 25)
-        self.button.setStyleSheet("background-color : green")
+        self.button.setStyleSheet("background-color : green;color: white;")
+        self.button.setFont(QFont('helvetica', 10))
 
         self.button.clicked.connect(self.get_results)
         self.button.setAutoDefault(True)
@@ -49,9 +50,6 @@ class App(QWidget):
         out = output(input)
         self.result.setText(out)
         return out
-
-
-
 
 
 if __name__ == '__main__':
