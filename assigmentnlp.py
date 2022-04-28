@@ -2,6 +2,7 @@ import re
 import nltk
 from nltk.corpus import brown
 
+
 nltk.download('brown')
 
 learned_sents = brown.sents(categories='learned')
@@ -34,15 +35,13 @@ def trigram(corpus, str):
         return list_of_words
 
 
-while True:
-    x = input('\t')
+def output(x):
     x = " ".join(x.split())
-
-    if len(x) == 0:
-        break
-
     list_of_seq = trigram(learned_sents, re.split("\\W+", x))
 
+    out = ''
     for tuble in list_of_seq:
-        print(x, tuble[0])
-    print('\n')
+        out += x + ' ' + tuble[0] + '\n'
+
+    return out
+
