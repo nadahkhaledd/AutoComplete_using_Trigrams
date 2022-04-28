@@ -40,6 +40,7 @@ def output(x):
     out = ''
     for tuble in list_of_seq:
         out += x + ' ' + tuble[0] + '\n'
+        #out.append(x + ' ' + tuble[0])
 
     return out
 
