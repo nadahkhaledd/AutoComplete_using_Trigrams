@@ -1,8 +1,6 @@
 import re
 import nltk
 from nltk.corpus import brown
-
-
 nltk.download('brown')
 
 learned_sents = brown.sents(categories='learned')
