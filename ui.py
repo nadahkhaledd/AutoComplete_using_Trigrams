@@ -1,7 +1,7 @@
 import sys
 
-from PyQt5 import QtCore, QtGui, Qt
-from PyQt5.QtGui import QFont, QStandardItemModel
+from PyQt5 import QtCore
+from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import *
 
 from assigmentnlp import output
@@ -18,7 +18,6 @@ class App(QWidget):
         self.layout = QVBoxLayout()
         self.title = QLabel('Auto Complete')
         self.title.setFont(QFont('helvetica', 14))
-        #self.title.setAlignment(QtCore.Qt.AlignCenter)
 
         self.search_input = QLineEdit()
         self.search_input.setFixedSize(200, 25)
@@ -36,6 +35,8 @@ class App(QWidget):
         self.search_input.returnPressed.connect(self.button.click)
 
         self.result = QLabel('')
+        self.result.setStyleSheet("color: blue;")
+        self.result.setFont(QFont('helvetica', 10))
 
 
         self.layout.addWidget(self.title)
@@ -49,7 +50,6 @@ class App(QWidget):
 
     def eventFilter(self, obj, event):
         if event.type() == QtCore.QEvent.KeyRelease and obj is self.search_input and self.search_input.hasFocus():
-
             self.get_results()
         return super().eventFilter(obj, event)
 
